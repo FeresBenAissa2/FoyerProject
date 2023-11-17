@@ -1,9 +1,6 @@
 package tn.esprit.foyerferesbenaissa.DOA.Entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -17,12 +14,14 @@ import lombok.experimental.FieldDefaults;
 public class Universite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idUniversite;
+     long idUniversite;
     @NonNull
-    private String nomUniversite;
+     String nomUniversite;
     @NonNull
 
-    private String address;
-
+     String address;
+    // universite c'est le parent de foyer
+    @OneToOne
+    Foyer foyer;
 
 }

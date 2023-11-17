@@ -1,11 +1,10 @@
 package tn.esprit.foyerferesbenaissa.DOA.Entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,8 +17,13 @@ public class Foyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long idFoyer ;
-    private String nomFoyer;
-    private  long capaciteFoyer ;
-
+    long idFoyer;
+    String nomFoyer;
+    long capaciteFoyer;
+    // foyer => child de universite -> contient mappped
+    @OneToOne(mappedBy = "foyer")
+    Universite universite;
+    // foyer => child ! one to many
+    @OneToMany(mappedBy = "foyer")
+    List<Bloc> blocs;
 }

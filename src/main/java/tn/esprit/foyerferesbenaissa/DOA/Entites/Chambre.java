@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -19,4 +21,10 @@ public class Chambre {
     @Enumerated(EnumType.STRING)
 
     private TypeChambre typeC;
+
+    @ManyToOne
+    Bloc bloc;
+
+    @OneToMany
+    List<Reservation> reservations;
 }

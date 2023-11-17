@@ -1,13 +1,11 @@
 package tn.esprit.foyerferesbenaissa.DOA.Entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,4 +19,7 @@ public class Reservation {
     private String idReservation;
     private LocalDate anneeUniversaire;
     private boolean estValide;
+    @ManyToMany
+    List<Etudiant> etudiants;
+
 }
