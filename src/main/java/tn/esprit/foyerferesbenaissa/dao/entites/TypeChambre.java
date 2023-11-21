@@ -1,4 +1,4 @@
-package tn.esprit.foyerferesbenaissa.DOA.Entites;
+package tn.esprit.foyerferesbenaissa.dao.entites;
 
 public enum TypeChambre {
     SIMPLE,

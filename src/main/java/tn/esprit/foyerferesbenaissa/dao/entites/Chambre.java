@@ -1,4 +1,4 @@
-package tn.esprit.foyerferesbenaissa.DOA.Entites;
+package tn.esprit.foyerferesbenaissa.dao.entites;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,17 +13,18 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Bloc {
+public class Chambre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idChambre;
+    private long numeroChambre;
+    @Enumerated(EnumType.STRING)
 
-    long idBloc;
-    String nomBloc;
-    long capaciteBloc;
+    private TypeChambre typeC;
 
     @ManyToOne
-    Foyer foyer;
+    Bloc bloc;
 
-    @OneToMany(mappedBy = "bloc")
-    List<Chambre> chambres;
+    @OneToMany
+    List<Reservation> reservations;
 }

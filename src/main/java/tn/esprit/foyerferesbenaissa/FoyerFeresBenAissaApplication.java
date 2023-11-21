@@ -2,7 +2,7 @@ package tn.esprit.foyerferesbenaissa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import tn.esprit.foyerferesbenaissa.DOA.Entites.Universite;
+import tn.esprit.foyerferesbenaissa.dao.entites.Universite;
 
 @SpringBootApplication
 public class FoyerFeresBenAissaApplication {
