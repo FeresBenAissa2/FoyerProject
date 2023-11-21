@@ -18,7 +18,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Etudiant {
     @Id
-    private String idEtudiant;
+    private long idEtudiant;
     private String nomEt;
     private String prenomEt;
     private long cin;
