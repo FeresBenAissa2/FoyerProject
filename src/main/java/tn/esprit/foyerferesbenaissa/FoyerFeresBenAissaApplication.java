@@ -11,7 +11,6 @@ public class FoyerFeresBenAissaApplication {
 
 		SpringApplication.run(FoyerFeresBenAissaApplication.class, args);
 
-		Universite univ = Universite.builder().idUniversite(1).nomUniversite("test").address("ss").build();
 	}
 
 }
